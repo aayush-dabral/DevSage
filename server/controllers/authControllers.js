@@ -39,6 +39,7 @@ exports.login = async (req, res, next) => {
         res.cookie('jwtoken', token, {
             maxAge: 86400000,
             httpOnly: true,
+            SameSite: none
         })
 
         res.send(user.roles)
